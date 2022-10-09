@@ -1,9 +1,13 @@
 import os
 import shutil
-path = input('Paste folder path')
-correctname = input('Enter correct frame names')
-padding = int(input('Add padding symbol for you frames'))
-newFolder = input('Enter name for new folder')
+path = input('Paste folder path:')
+correctname = input('Enter correct frame names:')
+padding = int(input('Add padding symbol for you frames:'))
+ansNewFolder = input('Create new folder with name frames OR create new folder with custom name? 1/2:')
+if ansNewFolder == '1':
+    newFolder = correctname
+else:
+    newFolder = input('Enter name for new folder:')
 
 # list of files
 tmp = os.listdir(path)
@@ -11,7 +15,7 @@ files = []
 for t in tmp:
     if os.path.isfile(os.path.join(path,t)):
         files.append(t)
-# print(files)
+
 # separate
 frames = []
 for i in files:
